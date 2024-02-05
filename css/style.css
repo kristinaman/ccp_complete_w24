@@ -21,16 +21,21 @@ h1 {
     font-weight:700;
     text-align: center;
     padding: 15px;
-    font-weight: bold;
 }
 
 h2 {
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
     font-size: 32px;
     color: #0D0D0D;
 }
 
 h3 {
     font-size: 24px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-weight: 500;
     color: #0D0D0D;
 }
 
@@ -40,6 +45,9 @@ p {
     padding-left: 10px;
 }
 
+.center{
+    text-align: center;
+}
 /* img {
     width: 250px;
     display: block;
@@ -51,19 +59,52 @@ div {
     min-height: 125px;
     padding: 20px;
 }
-
-nav {
+/* Style all <ul> elements */
+ul {
+    list-style: none; /* Remove default list style */
+    padding-left: 20px; /* Add padding for space between bullet and text */
+  }
+  
+/* Style each <li> element with a star bullet */
+ul:not(nav ul) li:before {
+    content: "\2605"; /* Unicode character for star */
+    display: inline-block;
+    margin-left: -20px; /* Move the star to the left */
+    padding-right: 5px; /* Add space between the star and the text */
+  }
+  
+  /* Style <ul> elements in the section with numbers */
+  .numbered {
+    counter-reset: list-counter; /* Reset the counter */
+  }
+  
+  .numbered li {
+    counter-increment: list-counter; /* Increment the counter for each list item */
+    list-style: none; /* Remove default list style */
+  }
+  
+  .numbered li:before {
+    content: counter(list-counter) "."; /* Display the counter with a dot */
+    display: inline-block;
+    margin-left: -20px; /* Move the number to the left */
+  }
+  
+  nav {
     margin: 0;
     padding: 0;
     background-color: #ffe1f1;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
+
+nav ul li:before {
+    content: none; /* Remove the star bullet for <ul> elements inside navigation */
+  }
 
 nav ul li {
     float: left;
@@ -109,22 +150,40 @@ nav ul li a.active {
 
 .grid-container {
     display: grid;
+    align-items: center;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid with minimum width of 200px */
     grid-gap: 10px; /* Spacing between grid items */
   }
   
   .item {
+    position: relative;
+    width: 100%; /* Ensure items take up full width of grid cell */
+    padding-top: 100%; /* Set padding top to create a square aspect ratio */
+    overflow: hidden; /* Hide overflow content (if any) */
+    border: 5px dashed #FFD700; /* Add dark yellow border */
+}
+
+.item img, .item video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure images and videos take up full width of item */
+    height: 100%; /* Ensure images and videos take up full height of item */
+    object-fit: cover; /* Cover the entire item, maintaining aspect ratio */
+}
+
+.origin {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc; /* Add border for visual separation */
-    aspect-ratio: 1; /* Set aspect ratio to 1:1 for squares */
-  }
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+    padding: 0px;
+}
+
+.origin h3 {
+    margin: 0 20px; /* Add some spacing between the headings */
+}
+
   
-  img, video {
-    max-width: 100%; /* Ensure images and videos don't exceed their container's width */
-    max-height: 100%; /* Ensure images and videos don't exceed their container's height */
-    object-fit: contain; /* Maintain aspect ratio and fit within container */
-  }
   
   
