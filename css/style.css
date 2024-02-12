@@ -8,7 +8,7 @@ body {
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    background-color: #fdffe2;
+    background-color: #ebe7e0;
 }
 
 h2, h3, h4, h5, h6 {
@@ -92,7 +92,7 @@ ul:not(nav ul) li:before {
   nav {
     margin: 0;
     padding: 0;
-    background-color: #ffe1f1;
+    background-color: #c6d4e1;
 }
 
 nav ul {
@@ -120,11 +120,11 @@ nav ul li a {
 
 nav ul li a:hover {
     font-weight: bold;
-    color: #890049;
+    color: #44749d;
 }
 
 nav ul li a.active {
-    background-color: #890049;
+    background-color: #44749d;
     color: #fff;
     font-style: italic;
 }
@@ -137,7 +137,7 @@ nav ul li a.active {
     position: absolute;
     top: -40px;
     left: 0;
-    background-color: #890049;
+    background-color: #44749d;
     color: #fff;
     padding: 10px;
     text-decoration: none;
@@ -161,7 +161,7 @@ nav ul li a.active {
     width: 100%; 
     padding-top: 100%; 
     overflow: hidden; 
-    border: 5px dashed #FFD700; 
+    border: 5px dashed #bdb8ad; 
 }
 
 .item img, .item video {
