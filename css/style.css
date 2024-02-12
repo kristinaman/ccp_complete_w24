@@ -33,8 +33,8 @@ h2 {
 
 h3 {
     font-size: 24px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 15px;
+    padding-bottom: 5px;
     font-weight: 500;
     color: #0D0D0D;
 }
@@ -126,6 +126,7 @@ nav ul li a:hover {
 nav ul li a.active {
     background-color: #890049;
     color: #fff;
+    font-style: italic;
 }
 
 .content {
@@ -151,38 +152,46 @@ nav ul li a.active {
 .grid-container {
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid with minimum width of 200px */
-    grid-gap: 10px; /* Spacing between grid items */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    grid-gap: 10px; 
   }
   
   .item {
     position: relative;
-    width: 100%; /* Ensure items take up full width of grid cell */
-    padding-top: 100%; /* Set padding top to create a square aspect ratio */
-    overflow: hidden; /* Hide overflow content (if any) */
-    border: 5px dashed #FFD700; /* Add dark yellow border */
+    width: 100%; 
+    padding-top: 100%; 
+    overflow: hidden; 
+    border: 5px dashed #FFD700; 
 }
 
 .item img, .item video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Ensure images and videos take up full width of item */
-    height: 100%; /* Ensure images and videos take up full height of item */
-    object-fit: cover; /* Cover the entire item, maintaining aspect ratio */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
 }
 
 .origin {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Allow items to wrap if necessary */
-    padding: 0px;
+    flex-wrap: wrap;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .origin h3 {
-    margin: 0 20px; /* Add some spacing between the headings */
+    margin: 0 20px;
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .video-element {
+        display: none;
+    }
+}
+  
 
   
   
