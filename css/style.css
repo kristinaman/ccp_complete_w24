@@ -47,8 +47,13 @@ p {
 }
 
 .center{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.center > * {
+    width: 60%;
+  }
 
 div {
     min-height: 125px;
@@ -184,21 +189,21 @@ nav ul li a.active {
     top: 0;
 }
 
-  .grid-container {
+.grid-container {
     display: grid;
     grid-template-columns: repeat(2, 45%);
     grid-gap: 10px;
     justify-content: center;
-  }
-  
-  .grid-container > * {
+}
+
+.grid-container > * {
     width: 100%;
-  }
-  
-  .video-element {
+}
+
+.video-element {
     width: 100%;
     height: auto;
-  }
+}
   
 
 .origin {
