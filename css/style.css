@@ -9,6 +9,7 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     background-color: #ebe7e0;
+    padding-top: 20px;
 }
 
 h2, h3, h4, h5, h6 {
@@ -48,12 +49,6 @@ p {
 .center{
     text-align: center;
 }
-/* img {
-    width: 250px;
-    display: block;
-    margin: 0 auto;
-    border: 10px dashed #FFFFFF;
-} */
 
 div {
     min-height: 125px;
@@ -89,25 +84,27 @@ ul:not(nav ul) li:before {
     margin-left: -20px; /* Move the number to the left */
   }
   
-  nav {
+nav {
     margin: 0;
-    padding: 0;
+    padding: 10;
     background-color: #c6d4e1;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    width: 100%; 
 }
 
 nav ul {
-    list-style: none;;
+    list-style: none;
     margin: 0;
     padding: 0;
+    max-height: 0;
     overflow: hidden;
+    transition: max-height 0.3s ease-out;
 }
 
-nav ul li:before {
-    content: none; /* Remove the star bullet for <ul> elements inside navigation */
-  }
-
 nav ul li {
-    float: left;
+    float: none;
 }
 
 nav ul li a {
@@ -118,15 +115,53 @@ nav ul li a {
     text-decoration: none;
 }
 
-nav ul li a:hover {
-    font-weight: bold;
-    color: #44749d;
-}
-
 nav ul li a.active {
     background-color: #44749d;
     color: #fff;
     font-style: italic;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background-color: #0D0D0D;
+    height: 3px;
+    width: 30px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: "";
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 10px;
+}
+
+.nav-toggle-label span::after {
+    top: 10px;
+}
+
+.nav-toggle:checked ~ ul {
+    max-height: 500px;
 }
 
 .content {
@@ -149,29 +184,22 @@ nav ul li a.active {
     top: 0;
 }
 
-.grid-container {
+  .grid-container {
     display: grid;
-    align-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
-    grid-gap: 10px; 
+    grid-template-columns: repeat(2, 45%);
+    grid-gap: 10px;
+    justify-content: center;
   }
   
-  .item {
-    position: relative;
-    width: 100%; 
-    padding-top: 100%; 
-    overflow: hidden; 
-    border: 5px dashed #bdb8ad; 
-}
-
-.item img, .item video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover;
-}
+  .grid-container > * {
+    width: 100%;
+  }
+  
+  .video-element {
+    width: 100%;
+    height: auto;
+  }
+  
 
 .origin {
     display: flex;
@@ -191,8 +219,57 @@ nav ul li a.active {
         display: none;
     }
 }
-  
 
-  
+@media (min-width: 768px) {
+    /* Tablet styles */
+    h1{
+        font-family: 'Playfair Display', serif; 
+        font-size: 48px;
+        font-weight:700;
+        text-align: center;
+        padding: 15px;
+        padding-top: 60px;
+    }
+    .grid-container {
+        grid-template-columns: repeat(5, 20%);
+      }
+
+    .nav-toggle-label {
+        display: none;
+    }
+    nav ul {
+        max-height: none;
+        overflow: visible;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li {
+        float: none;
+        margin-right: 20px;
+    }
+
+    nav ul li:last-child {
+        margin-right: 0;
+    }
+
+    nav ul li a {
+        padding: 20px;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
+    nav ul li a:hover {
+        font-weight: bold;
+        color: #44749d;
+    }
+
+    .grid-container img:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+}
+
   
   
