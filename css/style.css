@@ -182,10 +182,10 @@ nav ul li a.active {
     transition: top 0.3s ease; 
 }
 
-/* .skip-link:focus,
+.skip-link:focus,
 .skip-link:active {
     top: 0;
-} */
+}
 
 .grid-container {
     display: grid;
@@ -269,10 +269,6 @@ nav ul li a.active {
         color: #44749d;
     }
 
-    /* .grid-container img:hover {
-        transform: scale(1.05);
-        transition: transform 0.3s ease;
-    } */
 }
 
 @media (min-width: 1024px) {
