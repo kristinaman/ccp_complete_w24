@@ -91,7 +91,6 @@ ul:not(nav ul) li:before {
   
 nav {
     margin: 0;
-    padding: 10;
     background-color: #c6d4e1;
     position: fixed;
     z-index: 1;
@@ -108,9 +107,6 @@ nav ul {
     transition: max-height 0.3s ease-out;
 }
 
-nav ul li {
-    float: none;
-}
 
 nav ul li a {
     display: block;
@@ -124,7 +120,7 @@ nav ul li a {
 nav ul li a.active {
     background-color: #44749d;
     color: #fff;
-    font-style: italic;
+    font-weight: bold;
 }
 
 .nav-toggle {
@@ -186,10 +182,10 @@ nav ul li a.active {
     transition: top 0.3s ease; 
 }
 
-.skip-link:focus,
+/* .skip-link:focus,
 .skip-link:active {
     top: 0;
-}
+} */
 
 .grid-container {
     display: grid;
@@ -273,10 +269,10 @@ nav ul li a.active {
         color: #44749d;
     }
 
-    .grid-container img:hover {
+    /* .grid-container img:hover {
         transform: scale(1.05);
         transition: transform 0.3s ease;
-    }
+    } */
 }
 
 @media (min-width: 1024px) {
@@ -350,7 +346,7 @@ nav ul li a.active {
     nav ul li a.active {
         background-color: #44749d;
         color: #fff;
-        font-style: italic;
+        font-weight: bold;
     }
     
     .grid-container {
